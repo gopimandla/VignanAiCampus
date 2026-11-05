@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-warm-50 text-warm-900 dark:bg-warm-950 dark:text-warm-100 selection:bg-blush-400 selection:text-white transition-colors duration-200;
+    /* Subtle Luxury Command Center Grid Background Pattern */
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(140, 116, 94, 0.08) 1px, transparent 0),
+      linear-gradient(to right, rgba(140, 116, 94, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(140, 116, 94, 0.03) 1px, transparent 1px);
+    background-size: 28px 28px, 112px 112px, 112px 112px;
+  }
+}
+
+.dark body {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(176, 155, 134, 0.06) 1px, transparent 0),
+    linear-gradient(to right, rgba(176, 155, 134, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(176, 155, 134, 0.02) 1px, transparent 1px);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(221, 208, 194, 0.6);
+}
+
+.dark .glass-panel {
+  background: rgba(35, 26, 20, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(110, 88, 68, 0.35);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(176, 155, 134, 0.4);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 116, 94, 0.7);
+}
+
+/* Subtle Pulsing Keyframes */
+@keyframes soft-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
